@@ -16,9 +16,14 @@ set(IB_POSIX_CLIENT_SRC ${CMAKE_CURRENT_SOURCE_DIR}/../source/PosixClient)
 set(IB_POSIX_CLIENT_INCLUDE_DIR ${IB_POSIX_CLIENT_SRC}/Shared)
 set(IB_POSIX_CLIENT_SOURCE_DIR ${IB_POSIX_CLIENT_SRC}/src)
 
+option(TWS_API_TESTS "Enable testing" ON)
+
 file(GLOB IB_POSIX_CLIENT_SOURCES ${IB_POSIX_CLIENT_SOURCE_DIR}/*)
 file(GLOB IB_POSIX_CLIENT_INCLUDES ${IB_POSIX_CLIENT_INCLUDE_DIR}/*.h)
 file(GLOB API_INCLUDES ${API_INCLUDE_DIR}/*.h)
 
 add_subdirectory(Api)
-add_subdirectory(Test)
+
+if(TWS_API_TESTS)
+  add_subdirectory(Test)
+endif()
