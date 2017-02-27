@@ -29,6 +29,9 @@ currently in use, this in symmetry with serverVersion().
 #ifndef _TwsApiL0_h
 #define _TwsApiL0_h
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
 //----------------------------------------------------------------------------
 //  Add some C necessirites (for linux)
 //----------------------------------------------------------------------------
@@ -205,6 +208,7 @@ protected:
 
 #undef EWRAPPERL0_DEFAULT
 
+#pragma GCC diagnostic pop
 
 //----------------------------------------------------------------------------
 #endif	// _TwsApiL0_h
